@@ -34,33 +34,63 @@ The contract includes all essential ERC-20 functions such as transferring tokens
 6. Click **Compile MyToken.sol**  
 7. Go to **Deploy & Run Transactions**  
 8. Select **JavaScript VM**  
-9. Enter total supply (example for 1M tokens with 18 decimals):  
+9. Enter total supply (example for 1M tokens with 18 decimals)  
 10. Click **Deploy**
 
 ---
 
 ## How to Use
 
-### Check Token Information
+### **Check Token Information**
 ```solidity
 name()        // returns "MyToken"
 symbol()      // returns "MTK"
 decimals()    // returns 18
 totalSupply() // returns total token supply
+```
+
+---
 
 ### **Check Balance**
 ```solidity
 balanceOf(address) // returns uint256
+```
 
-### Transfer Tokens
+---
+
+### **Transfer Tokens**
 ```solidity
 transfer(receiverAddress, amount)
+```
 
-### Approve a Spender
+---
+
+### **Approve a Spender**
 ```solidity
 approve(spenderAddress, amount)
+```
 
-### Delegated Transfer (Using Allowance)
+---
+
+### **Delegated Transfer (Using Allowance)**
 ```solidity
 transferFrom(senderAddress, receiverAddress, amount)
+```
+---
 
+### Testing Performed
+* Contract compiled successfully
+* Deployed using Remix JavaScript VM
+* Verified name, symbol, decimals, totalSupply
+* Tested balanceOf for deployer
+* Successfully transferred tokens using transfer
+* Approved another account using approve
+* Executed delegated transfer using transferFrom
+* Confirmed allowance decreases correctly
+* Tested failure cases (invalid transfers, no approval, zero address)
+
+---
+
+### Conclusion
+The MyToken contract implements all major ERC-20-style functionalities, works flawlessly in Remix IDE, and is suitable for educational or demo purposes.
+All functions were tested and verified successfully, including transfers, approvals, and delegated transactions.
